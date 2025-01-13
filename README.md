@@ -4,6 +4,7 @@ This repository register my studie about Golang, bellow is my references:
 
 - Official Documentation
 https://go.dev/
+https://go.dev/doc/effective_go
 
 - Course Youtube - "Aprenda Go" in Portuguese
 https://www.youtube.com/watch?v=WiGU_ZB-u0w&list=PLCKpcjBB_VlBsxJ9IseNxFllf-UFEXOdg
