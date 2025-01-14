@@ -17,7 +17,8 @@ func main() {
 	// aboutSliceMake()
 	//
 	// aboutMaps()
-	aboutMapsRange()
+	// aboutMapsRange()
+	exercises()
 
 }
 
@@ -240,5 +241,117 @@ func aboutMapsRange() {
 	}
 
 	fmt.Println("The total is:", total)
+
+}
+
+func exercises() {
+	fmt.Println("*****************************************************")
+	x := [5]int{1, 2, 4, 5, 6}
+
+	for _, v := range x {
+		fmt.Println(v)
+	}
+
+	fmt.Println("*****************************************************")
+
+	slice := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+	for i, v := range slice {
+		fmt.Println(i, v)
+	}
+
+	fmt.Println("*****************************************************")
+	fmt.Println(slice[:3])
+	fmt.Println(slice[4:])
+	fmt.Println(slice[1:7])
+	fmt.Println(slice[2:9])
+	fmt.Println(slice[2 : len(slice)-1])
+
+	fmt.Println("*****************************************************")
+
+	slicey := []int{42, 43, 44, 45, 46, 47, 48, 49, 50, 51}
+
+	sliceTwo := append(slicey, 52)
+	slicThree := append(sliceTwo, 53, 54, 55)
+
+	fmt.Println(slicThree)
+
+	y := []int{56, 57, 58, 59, 60}
+
+	slicThree = append(slicThree, y...)
+
+	fmt.Println(slicThree)
+
+	fmt.Println("*****************************************************")
+
+	sliceUF := make([]string, 50, 50)
+
+	sliceUF = []string{`Alabama`, `Alaska`, `Arizona`, `Arkansas`, `California`, `Colorado`, `Connecticut`, `Delaware`, `Florida`,
+		`Georgia`, `Hawaii`, `Idaho`, `Illinois`, `Indiana`, `Iowa`, `Kansas`, `Kentucky`, `Louisiana`, `Maine`, `Maryland`,
+		`Massachusetts`, `Michigan`, `Minnesota`, `Mississippi`, `Missouri`, `Montana`, `Nebraska`, `Nevada`, `New Hampshire`,
+		`New Jersey`, `New Mexico`, `New York`, `North Carolina`, `North Dakota`, `Ohio`, `Oklahoma`, `Oregon`, `Pennsylvania`,
+		`Rhode Island`, `South Carolina`, `South Dakota`, `Tennessee`, `Texas`, `Utah`, `Vermont`, `Virginia`, `Washington`,
+		`West Virginia`, `Wisconsin`, `Wyoming`}
+
+	fmt.Println(len(sliceUF), cap(sliceUF))
+
+	for i := 0; i < len(sliceUF); i++ {
+		fmt.Println(i, sliceUF[i])
+	}
+
+	fmt.Println("*****************************************************")
+
+	sliceString := [][]string{
+		{
+			"John",
+			"Doe",
+			"Play soccer",
+		},
+		{
+			"Jane",
+			"Doe",
+			"Dance",
+		},
+		{
+			"Jessany",
+			"Kaline",
+			"Swimming",
+		}}
+
+	for i, v := range sliceString {
+		fmt.Println(i, v)
+	}
+
+	for i, v := range sliceString {
+		fmt.Println("Index:", i)
+		for _, val := range v {
+			fmt.Println("\t", val)
+		}
+	}
+
+	fmt.Println("*****************************************************")
+
+	m := map[string][]string{
+		"John_Doe":       {"Soccer", "Basketball", "Tennis"},
+		"Jessany_Kaline": {"Swimming", "Dance", "Run"},
+	}
+
+	m["Jane_Doe"] = []string{"Dance", "Soccer", "Run"}
+
+	for k, v := range m {
+		fmt.Println(k)
+		for i, val := range v {
+			fmt.Println("\t", i, val)
+		}
+	}
+
+	fmt.Println("*****************************************************")
+
+	delete(m, "John_Doe")
+
+	for k, v := range m {
+		fmt.Println(k, v)
+
+	}
 
 }
